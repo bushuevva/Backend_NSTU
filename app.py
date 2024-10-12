@@ -262,3 +262,29 @@ def calc_two(a):
 def calc_three(a):
       return redirect(url_for('calc', a=a, b=1))
 # ---------------------
+books = [
+      {'title': 'Властелин колец', 'author': 'Джон Р. Р. Толкин,', 'genre': 'роман-эпопея', 'pages': 900},
+      {'title': 'Гордость и предубеждение', 'author': 'Джейн Остин', 'genre': 'роман' , 'pages': 430},
+      {'title': 'Тёмные начала', 'author': 'Филип Пулман', 'genre': 'фантастическая трилогия', 'pages': 500},
+      {'title': 'Автостопом по галактике', 'author': 'Дуглас Адамс', 'genre': 'юмористический научно-фантастический роман', 'pages': 400},
+      {'title': 'Гарри Поттер и Кубок огня', 'author': 'Джоан Роулинг', 'genre': 'фэнтези', 'pages': 647},
+      {'title': 'Убить пересмешника', 'author': 'Харпер Ли',  'genre': 'роман-бестселлер', 'pages': 280},
+      {'title': 'Винни Пух', 'author': 'Алан Александр Милн', 'genre': 'детская повесть' , 'pages': 30},
+      {'title': '1984', 'author': 'Джордж Оруэлл', 'genre': 'роман-антиутопия', 'pages': 330},
+      {'title': 'Лев, колдунья и платяной шкаф', 'author': 'Клайв Стэйплз Льюис',  'genre': 'фэнтези', 'pages': 650},
+      {'title': 'Джейн Эйр', 'author': 'Шарлотта Бронте',  'genre': 'роман', 'pages': 340}
+]
+@app.route('/lab2/books')
+def book():
+      return render_template('books.html', books=books)
+# -------------------------
+lists = [
+      {'name': 'Клубника', 'img': 'im1.webp' },
+      {'name': 'Ежевика', 'img': 'img2.webp' },
+      {'name': 'Голубика', 'img': 'img3.webp' },
+      {'name': 'Черника', 'img': 'img4.webp' },
+      {'name': 'Малина', 'img': 'img5.jpg' }
+]
+@app.route('/lab2/berries')
+def berries():
+      return render_template('berries.html', lists=lists)
