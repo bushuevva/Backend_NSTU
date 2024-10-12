@@ -182,7 +182,6 @@ def flowers(flower_id):
             return 'нет такого цветка', 404
       else:
             return "цветок:" + flower_list[flower_id]
-      
 @app.route('/lab2/add_flower/<name>')
 def add_flower(name):
       flower_list.append(name)
@@ -197,6 +196,22 @@ def add_flower(name):
     </body>
 </html>
 '''
+
+@app.route('/lab2/add_flower/')
+def no_name():
+    return 'Вы не задали имя цветка', 400
+
+@app.route('/lab2/kolvo_flowers')
+def kolvo_flowers():
+    return f'''
+    <!doctype html>
+    <html>
+        <body>
+            <p>Всего цветов: {len(flower_list)}</p>
+            <p>Все цветы:{ flower_list }</p>
+        </body>
+    </html>
+    '''
 @app.route('/lab2/example')
 def example():
     name, num, curs, gruppa = 'Бушуева Ирина Андреевна', 2, 3,'ФБИ-24' 
@@ -217,3 +232,33 @@ def lab2():
 def filters():
       phrase = "О <b> скольно </b> <u>нам</u> <i>открытий</i> чудных..."
       return render_template('filter.html', phrase = phrase)
+
+# -----------------
+@app.route('/lab2/calc/<int:a>/<int:b>')
+def calc(a, b):
+    # Здесь будет логика ваших вычислений
+      return f'''
+    <!doctype html>
+    <html>
+        <body>
+        <p>{a} + {b} = {a+b}</p>
+        <p>{a} - {b} = {a-b}</p>
+        <p>{a} * {b} = {a*b}</p>
+        <p>{a} / {b} = {a/b}</p>
+        <p>{a} <sup>{b}</sup> = {a**b}</p>
+        </body>
+    </html>
+'''
+
+@app.route('/lab2/calc/')
+def calc_one():
+    return redirect(url_for('calc', a=1, b=1))
+
+@app.route('/lab2/calc/<int:a>')
+def calc_two(a):
+    return redirect(url_for('calc', a=a, b=1))
+
+@app.route('/lab2/calc/<int:a>')
+def calc_three(a):
+      return redirect(url_for('calc', a=a, b=1))
+# ---------------------
