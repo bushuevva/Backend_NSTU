@@ -67,6 +67,9 @@ def menu():
         <div>
             <a href='http://127.0.0.1:5000/lab1'>Лабораторная работа 1</a>
         </div>
+                <div>
+            <a href='http://127.0.0.1:5000/lab2'>Лабораторная работа 2</a>
+        </div>
 
         <footer>
             &copy; Ирина Бушуева, ФБИ-24, 3 курс, 2024
@@ -232,7 +235,6 @@ def lab2():
 def filters():
       phrase = "О <b> скольно </b> <u>нам</u> <i>открытий</i> чудных..."
       return render_template('filter.html', phrase = phrase)
-
 # -----------------
 @app.route('/lab2/calc/<int:a>/<int:b>')
 def calc(a, b):
@@ -288,3 +290,8 @@ lists = [
 @app.route('/lab2/berries')
 def berries():
       return render_template('berries.html', lists=lists)
+
+# -------------------------
+@app.route('/')
+def home():
+    return render_template('menu.html')
