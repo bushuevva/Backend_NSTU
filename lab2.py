@@ -56,16 +56,16 @@ def example():
             {'name':'мандарины' , 'price': 95},
             {'name':'манго' , 'price': 321}
     ]
-    return render_template('example.html', name = name, num = num, curs = curs, gruppa = gruppa, fruits = fruits)
+    return render_template('lab2/example.html', name = name, num = num, curs = curs, gruppa = gruppa, fruits = fruits)
 
 @lab2.route('/lab2/')
 def lab():
-      return render_template('lab2.html')
+      return render_template('lab2/lab2.html')
 
 @lab2.route('/lab2/filters')
 def filters():
       phrase = "О <b> скольно </b> <u>нам</u> <i>открытий</i> чудных..."
-      return render_template('filter.html', phrase = phrase)
+      return render_template('lab2/filter.html', phrase = phrase)
 # -----------------
 @lab2.route('/lab2/calc/<int:a>/<int:b>')
 def calc(a, b):
@@ -109,7 +109,7 @@ books = [
 ]
 @lab2.route('/lab2/books')
 def book():
-      return render_template('books.html', books=books)
+      return render_template('lab2/books.html', books=books)
 # -------------------------
 lists = [
       {'name': 'Клубника', 'img': 'im1.webp' },
@@ -120,4 +120,4 @@ lists = [
 ]
 @lab2.route('/lab2/berries')
 def berries():
-      return render_template('berries.html', lists=lists)
+      return render_template('lab2/berries.html', lists=lists)

@@ -19,7 +19,7 @@
     <div>
         {% for list in lists %}
         <div class="berries">
-            <img src="{{url_for('static', filename=list.img)}}" alt="{{list.name}}">
+            <img src="{{url_for('static', filename='lab2/' + list.img)}}" alt="{{list.name}}">
             <p>{{list.name}}</p>
         </div>
         {% endfor %}

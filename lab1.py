@@ -9,7 +9,7 @@ def lab():
 <html>
     <body>
         <head>
-            <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+            <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
         </head>
         <header>
             НГТУ, ФБ, Лабораторная работа 1
@@ -51,12 +51,12 @@ def oak():
 <!doctype html>
 <html>
     <head>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <h1>Дерево</h1>
         <div>
-            <img src="''' + url_for('static', filename='tree.webp') + '''">
+            <img src="''' + url_for('static', filename='lab1/tree.webp') + '''">
         </div>
 
     </body>
@@ -72,7 +72,7 @@ def student():
     <body>
         <h1>Бушуева Ирина Андреевна</h1>
         <div class="image">
-            <img src="''' + url_for('static', filename='logo.jpg') + '''">
+            <img src="''' + url_for('static', filename='lab1/logo.jpg') + '''">
         </div>
 
     </body>
@@ -86,7 +86,7 @@ def python():
 <!doctype html>
 <html>
     <head>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <div class='bl'>
@@ -100,7 +100,7 @@ def python():
         </div>
 
         <div class="image">
-            <img src="''' + url_for('static', filename='python.png') + '''">
+            <img src="''' + url_for('static', filename='lab1/python.png') + '''">
         </div>
 
     </body>
@@ -114,7 +114,7 @@ def kapibara():
 <!doctype html>
 <html>
     <head>
-    <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <link rel="stylesheet" href="''' + url_for('static', filename='lab1/lab1.css') + '''">
     </head>
     <body>
         <div class='kapibara'>
@@ -131,7 +131,7 @@ def kapibara():
         </div>
 
         <div class="image">
-            <img src="''' + url_for('static', filename='kap.jpg') + '''">
+            <img src="''' + url_for('static', filename='lab1/kap.jpg') + '''">
         </div>
 
     </body>
