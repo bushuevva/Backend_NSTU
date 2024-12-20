@@ -12,7 +12,7 @@ function fillFilmList() {
             let tdTitleRus = document.createElement('td');
             let tdYear = document.createElement('td');
             let tdActions = document.createElement('td');
-            tdTitle.innerText = films[i].title == films[i].title_ru ? '': films[i].title;
+            tdTitle.innerHTML = films[i].title == films[i].title_ru ? '': `<i>(${films[i].title})</i>`;
             tdTitleRus.innerText = films[i].title_ru;
             tdYear.innerText = films[i].year;
             let editButton = document.createElement('button');
@@ -27,8 +27,8 @@ function fillFilmList() {
             }
             tdActions.appendChild(editButton);
             tdActions.appendChild(delButton);
-            tr.append(tdTitle);
             tr.append(tdTitleRus);
+            tr.append(tdTitle);
             tr.append(tdYear);
             tr.append(tdActions);   
             
@@ -48,6 +48,7 @@ function deleteFilm(id, title) {
 
 function showModal() {
     document.querySelector('div.modal').style.display = 'block';
+    document.getElementById('description-error').innerText = '';
 }
 
 function hideModal() {
@@ -68,6 +69,7 @@ function addFilm() {
 }
 
 function sendFilm() {
+    const id = document.getElementById('id').value;
     const film = {
         title: document.getElementById('title').value,
         title_ru: document.getElementById('title_ru').value,
