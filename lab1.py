@@ -25,16 +25,16 @@ def lab():
         </div>
 
         <li>
-            <a href='http://127.0.0.1:5000/menu'>Меню</a>
+            <a href='/menu'>Меню</a>
         </li>
 
         <h2>Релизованные роуты</h2>
         
-        <li><a href="http://127.0.0.1:5000/lab1/oak">Дерево</a></li>
+        <li><a href="/lab1/oak">Дерево</a></li>
         
-        <li><a href="http://127.0.0.1:5000/lab1/student">Студент</a></li>
-        <li><a href="http://127.0.0.1:5000/lab1/python">Python</a></li>
-        <li><a href="http://127.0.0.1:5000/lab1/kapibara">Kapibara</a></li>
+        <li><a href="/lab1/student">Студент</a></li>
+        <li><a href="/lab1/python">Python</a></li>
+        <li><a href="/lab1/kapibara">Kapibara</a></li>
 
 
         <footer>

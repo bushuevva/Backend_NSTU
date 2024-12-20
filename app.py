@@ -8,11 +8,29 @@ from lab6 import lab6
 from lab7 import lab7
 from lab8 import lab8
 import os
+from os import path
+from flask_sqlalchemy import SQLAlchemy
+from db import db
+from urllib.parse import quote
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'Секретно-секретный секрет')
 app.config['DB_TYPE'] = os.getenv('DB_TYPE', 'postgres')
+
+if app.config['DB_TYPE'] == 'postgres':
+    db_name = 'irina_orm'
+    db_user = 'irina_orm'
+    db_password = '123'
+    host_ip = '127.0.0.1'
+    host_port = 5432
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_user}:{db_password}@{host_ip}:{host_port}/{db_name}'
+else:
+    dir_path = path.dirname(path.realpath(__file__))
+    db_path = path.join(dir_path, "irina_orm.db")
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///irina_orm.db'
+
+db.init_app(app)
 
 app.register_blueprint(lab1)
 app.register_blueprint(lab2)
@@ -44,28 +62,28 @@ def menu():
         </header>
 
         <div>
-            <a href='http://127.0.0.1:5000/lab1'>Лабораторная работа 1</a>
+            <a href='/lab1'>Лабораторная работа 1</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab2'>Лабораторная работа 2</a>
+            <a href='/lab2'>Лабораторная работа 2</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab3'>Лабораторная работа 3</a>
+            <a href='/lab3'>Лабораторная работа 3</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab4'>Лабораторная работа 4</a>
+            <a href='/lab4'>Лабораторная работа 4</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab5'>Лабораторная работа 5</a>
+            <a href='/lab5'>Лабораторная работа 5</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab6'>Лабораторная работа 6</a>
+            <a href='/lab6'>Лабораторная работа 6</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab7'>Лабораторная работа 7</a>
+            <a href='/lab7'>Лабораторная работа 7</a>
         </div>
         <div>
-            <a href='http://127.0.0.1:5000/lab8'>Лабораторная работа 8</a>
+            <a href='/lab8'>Лабораторная работа 8</a>
         </div>
 
         <footer>
